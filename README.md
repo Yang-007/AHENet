@@ -28,7 +28,7 @@ Before starting, we should collect the following datasets.
 Datasets | Data source
 --- | :---:
 CVC-ClinicDB | [data](https://www.kaggle.com/datasets/balraj98/cvcclinicdb)
-CVC-ColonDB | [data](https://drive.google.com/file/d/1CfoUltAND4RP43HmiyWw_wjpYkzyKQEw/view?usp=sharing)
+CVC-ColonDB | [data](https://drive.google.com/file/d/17Y_eAnni1vZzciNNvykiqT62jOlUg-pC/view?usp=sharing)
 ETIS | [data](https://drive.google.com/file/d/1prHdvq3TNY1f0FCkjC1hZo36OGA1qLt7/view?usp=sharing)
 Kvasir | [data](https://datasets.simula.no/kvasir/)
 GLaS | [data](https://warwick.ac.uk/fac/cross_fac/tia/data/glascontest/download/)
