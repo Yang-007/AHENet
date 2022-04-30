@@ -6,7 +6,7 @@ lr = 1e-4
 
 dataset_name = 'CVC-ClinicDB'
 
-data_root = os.path.join('..','dataset',dataset_name)
+data_root = os.path.join('..', 'dataset', dataset_name)
 train_dir = os.path.join(data_root, 'train2.txt')
 test_dir = os.path.join(data_root, 'test2.txt')
 

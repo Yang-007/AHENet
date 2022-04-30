@@ -11,7 +11,7 @@ import numpy as np
 import pdb
 
 # 指定模型路径
-weight_path = './weights/CVC-ClinicDB/BestNet.pth'
+weight_path = 'weights/CVC-ClinicDB_AHENet/BestNet.pth'
 from lib.network_level_4 import Network
 
 vis_dir = './vis/'+weight_path.split('/')[-2]+'/'
@@ -39,7 +39,7 @@ for img_batch, label_batch, img_path_batch in tqdm(test_dataset.loader, total=te
     b = img_batch.size(0)
     img_batch = img_batch.cuda()        # (b, 3, h, w)
     label_batch = label_batch.cuda()    # (b, 1, h, w)
-
+    #print(img_batch.shape)
     pre_batch = net(img_batch)          # (b, 1, h, w)
     pre_batch = F.interpolate(pre_batch, size=(label_batch.size(2), label_batch.size(3)))
     pre_batch = torch.sigmoid(pre_batch)
@@ -65,6 +65,7 @@ for img_batch, label_batch, img_path_batch in tqdm(test_dataset.loader, total=te
 
         pre = pre.cpu().long().numpy() * 255
         label = label.cpu().long().numpy() * 255
+        #print(img.shape, pre.shape, label.shape)
         img = np.concatenate([img, pre[:, :, None].repeat(3, 2), 255*np.ones((img.shape[0], 1, 3)), label[:, :, None].repeat(3, 2)], 1)
 
         img_name = '%s.png' % (img_path.split('/')[-1].split('.')[0])
@@ -73,5 +74,5 @@ for img_batch, label_batch, img_path_batch in tqdm(test_dataset.loader, total=te
         cv2.imwrite(vis_path, img)
 
 
-print('[F1 %.4f IOU %.4f]' % ( f1_score_all.mean(), iou_score_all.mean()))
+print('[Average_F1 %.4f Average_IOU %.4f]' % ( f1_score_all.mean(), iou_score_all.mean()))
 

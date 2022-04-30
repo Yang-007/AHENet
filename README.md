@@ -61,7 +61,7 @@ The folder structure of dataset should be like
 ### 1. Training
 * cd `GCBLoss/' and run 
 ```python
-python train.py
+CUDA_VISIBLE_DEVICES=0 python train.py
 ```
 ### 2. Results
 The training results save in `weights/`
@@ -69,6 +69,6 @@ The training results save in `weights/`
 ### 3. Visualization
 * cd `GCBLoss/' and run 
 ```python
-python test.py
+CUDA_VISIBLE_DEVICES=1 python test.py
 ```
 The visual results save in `GCBLoss/vis`

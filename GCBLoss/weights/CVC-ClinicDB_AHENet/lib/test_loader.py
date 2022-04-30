@@ -32,11 +32,11 @@ class DataSetDefine(data.Dataset):
         with Image.open(label_path) as label:
             label = label.convert('L')  # (h, w)
             #if self.cfg.gt_resize:
-            label = label.resize(size=self.cfg.output_size, resample=Image.NEAREST)
+            #label = label.resize(size=self.cfg.output_size, resample=Image.NEAREST)
             label = np.array(label)[:, :, np.newaxis]   # (h, w, 1)
             label[label > 0] = 1
 
-        label[label > 0] = 1
+        #label[label > 0] = 1
         # ===================================================
         # ------------------- Normalization --------------------
         img = np.array(img) / 255.0

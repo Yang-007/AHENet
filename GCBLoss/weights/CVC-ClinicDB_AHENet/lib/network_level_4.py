@@ -17,6 +17,7 @@ class DownBlock(nn.Module):
         )
 
     def forward(self, x):
+        #print("x.shape:", x.shape)
         return self.layer(x)
 
 
@@ -77,17 +78,23 @@ class Network(nn.Module):
         x1 = self.head_conv(x)
 
         x2 = self.down1(x1)
+        #print('x2.shape', x2)
         x3 = self.down2(x2)
         x4 = self.down3(x3)
-
-        x5, loss_d4 = self.down4(self.mp4(x4), label)
-
+        if type(label) == torch.Tensor:
+            x5, loss_d4 = self.down4(self.mp4(x4), label)
+        else:
+            x5 = self.down4(self.mp4(x4))            
         x = self.up1(x5, x4)
         x = self.up2(x, x3)
         x = self.up3(x, x2)
         x = self.up4(x, x1)
-
-        return self.tail_conv(x), [loss_d4,]
+        if type(label) == torch.Tensor:
+            return self.tail_conv(x), [loss_d4,]
+        else:
+            return self.tail_conv(x)
+            
+            
 
 if __name__ == '__main__':
     import time

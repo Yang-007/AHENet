@@ -36,7 +36,7 @@ class WeightedDiceLoss(nn.Module):
 
     def forward(self, logit, truth, smooth=1e-5):
         batch_size = len(logit)
-        logit = F.sigmoid(logit)
+        logit = torch.sigmoid(logit)
         #print(logit.shape, truth.shape)
         logit = logit.view(batch_size,-1)
         truth = truth.view(batch_size,-1)

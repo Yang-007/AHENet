@@ -111,7 +111,7 @@ for epoch_index in range(cfg.epoch):
             b = img_batch.size(0)
             img_batch = img_batch.cuda()        # (b, 3, h, w)
             label_batch = label_batch.cuda()    # (b, 1, h, w)
-            pre_batch, _ = net(img_batch, label_batch)
+            pre_batch = net(img_batch,)
 
 
             pre_batch = F.interpolate(pre_batch, size=(label_batch.size(2), label_batch.size(3)))
