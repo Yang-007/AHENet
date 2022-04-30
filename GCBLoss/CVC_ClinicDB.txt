@@ -642,3 +642,4 @@ RDB_block_num: 4
 [AHENet] [Epoch 15 LR 0.000100] [Loss 0.359681] [F1/IOU 62.80/49.83] [BEST 15 62.80/49.83] [cost 16.25 seconds]
 [AHENet] [Epoch 16 LR 0.000100] [Loss 0.351654] [F1/IOU 62.11/48.66] [BEST 15 62.80/49.83] [cost 15.76 seconds]
 [AHENet] [Epoch 17 LR 0.000100] [Loss 0.347569] [F1/IOU 65.03/52.35] [BEST 17 65.03/52.35] [cost 16.09 seconds]
+[AHENet] [Epoch 18 LR 0.000100] [Loss 0.340328] [F1/IOU 65.56/53.18] [BEST 18 65.56/53.18] [cost 16.09 seconds]
