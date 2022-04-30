@@ -18,6 +18,7 @@ if dataset_name == 'CVC-ClinicDB':
     base_channel = 64
     inter_channel = base_channel // 2
     rdb_block_num = 4
+    model_level = 4
     lr_decay = True
 elif dataset_name == 'CVC-ColonDB':
     train_batch_size = 4
@@ -27,6 +28,7 @@ elif dataset_name == 'CVC-ColonDB':
     base_channel = 64
     inter_channel = base_channel // 2
     rdb_block_num = 4
+    model_level = 4
     lr_decay = True
 else:
     assert False
