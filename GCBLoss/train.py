@@ -78,8 +78,6 @@ for epoch_index in range(cfg.epoch):
     if cfg.lr_decay:
         if epoch_index < 3000:
             adjust_learning_rate(opt, epoch_index, cfg.lr, cfg.epoch, power=0.9)
-        else:
-            opt.param_groups[0]['lr'] = 1e-6
 
     for img_batch, label_batch in train_dataset.loader:
         #print('img_batch.shape:', img_batch.shape)
