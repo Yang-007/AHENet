@@ -43,12 +43,7 @@ PanNuke | [data](https://jgamper.github.io/PanNukeDataset/)
 * The folder structure of dataset should be like
 
 
-dataset/0123456_spacing_same/
-
-
-
-
-    
+dataset/
 
     ├── CVC-ClinicDB
     |    └── image
