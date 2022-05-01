@@ -32,7 +32,7 @@ class DataSetDefine(data.Dataset):
         with Image.open(label_path) as label:
             label = label.convert('L')  # (h, w)
             #if self.cfg.gt_resize:
-            #label = label.resize(size=self.cfg.output_size, resample=Image.NEAREST)
+            label = label.resize(size=self.cfg.output_size, resample=Image.NEAREST)
             label = np.array(label)[:, :, np.newaxis]   # (h, w, 1)
             label[label > 0] = 1
 
@@ -43,7 +43,7 @@ class DataSetDefine(data.Dataset):
         img = torch.FloatTensor(img).permute(2, 0, 1)
 
         label = torch.FloatTensor(label).permute(2, 0, 1)
-        return img, label, img_path
+        return img, label, img_path, label_path
 
     def __len__(self):
         return self.img_path_list.__len__()

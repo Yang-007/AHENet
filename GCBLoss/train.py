@@ -107,14 +107,14 @@ for epoch_index in range(cfg.epoch):
         torch.set_grad_enabled(False)
         net.eval()
         # for img_batch, label_batch, _ in tqdm(test_dataset.loader, total=test_dataset.loader.__len__(), ncols=0):
-        for img_batch, label_batch, _ in test_dataset.loader:
+        for img_batch, label_batch, _, _ in test_dataset.loader:
             b = img_batch.size(0)
             img_batch = img_batch.cuda()        # (b, 3, h, w)
             label_batch = label_batch.cuda()    # (b, 1, h, w)
             pre_batch = net(img_batch,)
 
 
-            pre_batch = F.interpolate(pre_batch, size=(label_batch.size(2), label_batch.size(3)))
+            #pre_batch = F.interpolate(pre_batch, size=(label_batch.size(2), label_batch.size(3)))
             pre_batch = torch.sigmoid(pre_batch)
 
 
