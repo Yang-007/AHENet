@@ -52,8 +52,7 @@ dataset/0123456_spacing_same/
     |        ├── liver_0.nii.gz
     |        ├── liver_1.nii.gz
     |        ├── ...
-    ├── 1Kidney
-    ├── ...
+
     
 
     ├── CVC-ClinicDB
