@@ -44,10 +44,7 @@ PanNuke | [data](https://jgamper.github.io/PanNukeDataset/)
 
 dataset/0123456_spacing_same/
     ├── 0Liver
-    |    └── imagesTr
-    |        ├── liver_0.nii.gz
-    |        ├── liver_1.nii.gz
-    |        ├── ...
+
 
 
     
