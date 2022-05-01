@@ -41,6 +41,17 @@ PanNuke | [data](https://jgamper.github.io/PanNukeDataset/)
 * Download and put these datasets in `dataset/`. 
 * Save the data directories in `train.txt`, `test.txt`
 * The folder structure of dataset should be like
+dataset/0123456_spacing_same/
+    ├── 0Liver
+    |    └── imagesTr
+    |        ├── liver_0.nii.gz
+    |        ├── liver_1.nii.gz
+    |        ├── ...
+    |    └── labelsTr
+    |        ├── liver_0.nii.gz
+    |        ├── liver_1.nii.gz
+    |        ├── ...
+    ├── 1Kidney
     ├── ...
 
     ├── CVC-ClinicDB
