@@ -39,8 +39,9 @@ PanNuke | [data](https://jgamper.github.io/PanNukeDataset/)
 
 
 * Download and put these datasets in `dataset/`. 
-* Save the data directories in `train.txt`, `test.txt`
+* Save the data directories in `train.txt`, `test.txt`.
 The folder structure of dataset should be like
+
 
 
     dataset/
