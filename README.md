@@ -55,22 +55,46 @@ The folder structure of dataset should be like
     |        ├── 1.png
     |        ├── 2.png
     |        ├── ...
-    |    └── train.txt
-    |    └── test.txt
+    |    └── train1.txt
+    |    └── test1.txt
+    |    └── train2.txt
+    |    └── test2.txt
+    |    └── train3.txt
+    |    └── test3.txt
+    |    └── train4.txt
+    |    └── test4.txt
+    |    └── train5.txt
+    |    └── test5.txt
     ├── CVC-ColonDB
     ├── ...
 
 ### 1. Training
 * cd `GCBLoss/' and run 
-```python
-CUDA_VISIBLE_DEVICES=0 python train.py
+* Modify line3, line10, line11 in `config.py` to 
 ```
+exp_name = 'AHENet_txt1'
+train_dir = os.path.join(data_root, 'train1.txt')
+test_dir = os.path.join(data_root, 'test1.txt')
+```
+```python
+CUDA_VISIBLE_DEVICES=0 python train.py >>train_result/train_CVC_ClinicDB_txt1.txt&
+```
+* Modify line3, line10, line11 in `config.py` to 
+```
+exp_name = 'AHENet_txt2'
+train_dir = os.path.join(data_root, 'train2.txt')
+test_dir = os.path.join(data_root, 'test2.txt')
+```
+```python
+CUDA_VISIBLE_DEVICES=0 python train.py >>train_result/train_CVC_ClinicDB_txt2.txt&
+```
+* ...
 ### 2. Results
 The training results save in `weights/`
 
 ### 3. Visualization
 * cd `GCBLoss/' and run 
 ```python
-CUDA_VISIBLE_DEVICES=1 python test.py
+CUDA_VISIBLE_DEVICES=1 python test.py >>test_result/test_CVC_ClinicDB_txt1.txt&
 ```
 The visual results save in `GCBLoss/vis`

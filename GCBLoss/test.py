@@ -11,7 +11,7 @@ import numpy as np
 import pdb
 
 # 指定模型路径
-weight_path = 'weights/CVC-ClinicDB_AHENet/BestNet.pth'
+weight_path = cfg.finetune_path
 from lib.network_level_4 import Network
 
 vis_dir = './vis/'+weight_path.split('/')[-2]+'/'
