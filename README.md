@@ -76,6 +76,7 @@ exp_name = 'AHENet_txt1'
 train_dir = os.path.join(data_root, 'train1.txt')
 test_dir = os.path.join(data_root, 'test1.txt')
 ```
+* Then do
 ```python
 CUDA_VISIBLE_DEVICES=0 python train.py >>train_result/train_CVC_ClinicDB_txt1.txt&
 ```
@@ -85,6 +86,7 @@ exp_name = 'AHENet_txt2'
 train_dir = os.path.join(data_root, 'train2.txt')
 test_dir = os.path.join(data_root, 'test2.txt')
 ```
+* Then do
 ```python
 CUDA_VISIBLE_DEVICES=0 python train.py >>train_result/train_CVC_ClinicDB_txt2.txt&
 ```
