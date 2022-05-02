@@ -99,4 +99,4 @@ The training results save in `weights/`
 ```python
 CUDA_VISIBLE_DEVICES=1 python test.py >>test_result/test_CVC_ClinicDB_txt1.txt&
 ```
-The visual results save in `GCBLoss/vis`
+The visual results save in `GCBLoss/vis`, where three regions in the visual picture from left to right include the input image, the prediction and the ground truth.
