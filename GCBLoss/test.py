@@ -10,7 +10,7 @@ import shutil
 import numpy as np
 import pdb
 
-# 指定模型路径
+
 weight_path = cfg.finetune_path
 from lib.network_level_4 import Network
 
