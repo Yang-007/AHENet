@@ -2,28 +2,6 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
-
-class GCBlock(nn.Module):
-    def __init__(self, in_c):
-        super().__init__()
-
-        self.conv_1 = nn.Conv2d(in_c, 1, 1, 1, 0)
-        self.conv_2 = nn.Sequential(
-            nn.Conv2d(in_c, in_c // 2, 1, 1, 0),
-            nn.LayerNorm(1),
-            nn.ReLU(),
-            nn.Conv2d(in_c // 2, in_c, 1, 1, 0),
-        )
-    
-    def forward(self, x):
-        b, c, h, w = x.size()
-        weight = self.conv_1(x).view(b, h * w, 1)
-        weight = torch.softmax(weight, 1)
-        x_output = torch.matmul(x.view(b, c, h * w), weight).view(b, c, 1, 1)
-
-        return self.conv_2(x_output) + x
-
-
 class SEBlock(nn.Module):
     def __init__(self, in_c):
         super().__init__()
